@@ -24,13 +24,6 @@ stages:
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         goals: 'package'
-- stage: test
-  jobs:
-  - job: maventestexecution
-    steps:
-    - script: echo Maven test phase
-- stage: sonarScan
-  jobs:
   - job: sonar_scan
     steps:
     - task: SonarCloudPrepare@1
@@ -42,3 +35,4 @@ stages:
         cliProjectVersion: 1.0
         cliProjectName: com.demo1
         cliSources: .
+    - task: SonarCloudAnalyze@1
