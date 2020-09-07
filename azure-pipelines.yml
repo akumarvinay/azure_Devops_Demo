@@ -29,4 +29,12 @@ stages:
   - job: maventestexecution
     steps:
     - script: echo Maven test phase
-      
+- stage: sonarScan
+  jobs:
+  - job: sonar scan
+    steps:
+    - task: SonarCloudPrepare@1
+      inputs:
+        SonarCloud: 'sonar-cloud'
+        organization: 'demo-org-vinay'
+        scannerMode: 'Other'
