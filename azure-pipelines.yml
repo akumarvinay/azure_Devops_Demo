@@ -37,4 +37,8 @@ stages:
       inputs:
         SonarCloud: 'sonar-cloud'
         organization: 'demo-org-vinay'
-        scannerMode: 'Other'
+        scannerMode: CLI 
+        cliProjectKey: com.demo1
+        cliProjectVersion: 1.0
+        cliProjectName: com.demo1
+        cliSources: .
