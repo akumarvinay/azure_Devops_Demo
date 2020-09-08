@@ -28,13 +28,11 @@ stages:
       inputs:
         SonarCloud: 'sonar-cloud'
         organization: 'demo-org-vinay'
-        scannerMode: 'Other'
-        extraProperties: |
-          # Additional properties that will be passed to the scanner, 
-          # Put one key=value per line, example:
-          # sonar.exclusions=**/*.bin
-          sonar.sources=.
-          sonar.language=java
+        scannerMode: 'CLI'
+        configMode: 'manual'
+        cliProjectKey: 'com.demo'
+        cliProjectName: 'com.demo'
+        cliSources: '.'
     - task: SonarCloudAnalyze@1
     - task: SonarCloudPublish@1
       inputs:
