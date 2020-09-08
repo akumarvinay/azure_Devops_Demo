@@ -40,6 +40,6 @@ stages:
         pollingTimeoutSec: '300'
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: 'target/*.war'
+        targetPath: 'target/vinay-azure.war'
         artifact: 'vinay-azure'
         publishLocation: pipeline
